@@ -1,28 +1,34 @@
 Answer each question in a written format
 
 1. What does semantic HTML mean?
-
+    It is HTML written in a meaningful way, where tags represent the part of the dom displayed in the element accurately.
 2. What is the box model?
-
+    It explains how elements in HTML take up space on the DOM. An element has margin, border, padding, and content space.
 3. What is the difference between IDs and Classes?
-
+    IDs are accessed in CSS with '#' and should only be used to name one specific element. Classes in HTML are accessed in CSS with a '.' and can be applied to many HTML elements at a time, to give them the rules defined for that class in CSS. One element can also have several class names.
 4. What does the z-index do?
-
+    The z-index is a third coordinate in space for an element to occupy in addition to the x and y. Elements with a higher z-index will appear "on top of" or "in front of" elements with a lower index;
 5. Summarize what the keyword 'this' is used for?
-
+    It is used to give context to a function or property. Whatever is to the right of the '.' after 'this' will be given the context of the object that 'this' refers to.
 6. What is a callback?
-
+    A callback function is a function passed into another function as a parameter.
 7. What is a closure?
-
+    A closure is a function that returns a function.
 8. How does prototype work?
-
+    Assigning a method to a class prototype will allow other new instances of that class to use the method without the method being a property on the new object.
 9. What is MVC?
-
+    Stands for model view controller. I believe it describes how something controls what the view displays based on the updated model.
 10. What is the component lifecycle?
-
+    A component in React will check if its new state is the same as incoming state. If it is different, it will update state and rerender.
 11. What is REST?
-
+    Represational State Transfer. It is a set of rules that define how HTTP requests can be made.
 12. Name three ways of getting data from the URL using express
+
+
+    axios.get('/api/users').then(response => response.data)
+    axios.delete('/api/users/:id').then(response => response.data)
+    axios.post('/api/users', {object here}).then(response => response.data)
+
 
 create table users (
 id serial,
@@ -33,9 +39,12 @@ email varchar(255)
 12. Given the Schema above, write the following four basic CRUD db queries using postgres syntax
 
 -Get all users:
-
+SELECT * FROM users;
 -Create a new user with the name of 'your name' and an email of 'fake@fake.com':
-
+INSERT INTO users (name, email)
+VALUES('your name', 'fake@fake.com');
 -Update the newly created user's name to 'Bobby Boy':
-
+UPDATE users SET (name = 'Bobby Boy')
+WHERE name = 'your name';
 -Delete the newly updated user:
+DELETE FROM users WHERE name = 'Bobby Boy';
